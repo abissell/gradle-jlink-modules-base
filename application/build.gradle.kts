@@ -12,6 +12,7 @@ extraJavaModuleInfo {
     module("commons-cli-1.4.jar", "org.apache.commons.cli", "3.2.2") {
         exports("org.apache.commons.cli")
     }
+    module("commons-collections-3.2.2.jar", "org.apache.commons.collections", "3.2.2")
     module("commons-beanutils-1.9.4.jar", "org.apache.commons.beanutils", "1.9.4") {
         exports("org.apache.commons.beanutils")
 
