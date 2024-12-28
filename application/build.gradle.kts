@@ -6,6 +6,7 @@ plugins {
 
 dependencies {
     implementation(project(":utilities"))
+    implementation("com.google.code.gson:gson:2.11.0")
 }
 
 application {
