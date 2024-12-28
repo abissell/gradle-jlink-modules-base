@@ -12,6 +12,13 @@ extraJavaModuleInfo {
     module("commons-cli-1.4.jar", "org.apache.commons.cli", "3.2.2") {
         exports("org.apache.commons.cli")
     }
+    module("commons-beanutils-1.9.4.jar", "org.apache.commons.beanutils", "1.9.4") {
+        exports("org.apache.commons.beanutils")
+
+        requires("org.apache.commons.logging")
+        requires("java.sql")
+        requires("java.desktop")
+    }
 }
 
 dependencies {
@@ -19,6 +26,7 @@ dependencies {
     implementation("com.google.code.gson:gson:2.11.0")      // real module
     implementation("org.apache.commons:commons-lang3:3.10") // automatic module
     implementation("commons-cli:commons-cli:1.4")           // plain library
+    implementation("commons-beanutils:commons-beanutils:1.9.4") // plain library (also brings in other libraries transitively)
 }
 
 application {

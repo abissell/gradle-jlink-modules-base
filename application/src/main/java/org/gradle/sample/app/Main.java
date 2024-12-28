@@ -3,6 +3,7 @@ package org.gradle.sample.app;
 import org.gradle.sample.list.LinkedList;
 
 import com.google.gson.Gson;
+import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.DefaultParser;
@@ -29,6 +30,11 @@ public class Main {
         String json = cmd.getOptionValue("json");
         Message message = new Gson().fromJson(json == null ? "{}" : json, Message.class);
         System.out.println("deserialized Message: " + message);
+
+        Object copy = BeanUtils.cloneBean(message);
+        System.out.println();
+        System.out.println("Original: " + copy.toString());
+        System.out.println("Copy:     " + copy.toString());
 
         if (cmd.hasOption("debug")) {
             printModuleDebug(StringUtils.class);

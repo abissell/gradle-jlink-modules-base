@@ -7,4 +7,5 @@ module org.gradle.sample.app {
     requires com.google.gson;
     requires org.apache.commons.lang3;
     requires org.apache.commons.cli;
+    requires org.apache.commons.beanutils;
 }
