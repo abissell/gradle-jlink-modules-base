@@ -2,11 +2,19 @@ plugins {
     id("myproject.java-conventions")
     application
     id("org.beryx.jlink") version "3.1.1"
+    id("org.gradlex.extra-java-module-info")
+}
+
+extraJavaModuleInfo {
+    // This does not have to be a complete description (e.g. here 'org.apache.commons.collections' does not export anything here).
+    // It only needs to be good enough to work in the context of this application we are building.
+    automaticModule("commons-logging-1.2.jar", "org.apache.commons.logging")
 }
 
 dependencies {
     implementation(project(":utilities"))
-    implementation("com.google.code.gson:gson:2.11.0")
+    implementation("com.google.code.gson:gson:2.11.0")      // real module
+    implementation("org.apache.commons:commons-lang3:3.10") // automatic module
 }
 
 application {

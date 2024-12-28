@@ -3,6 +3,7 @@ package org.gradle.sample.app;
 import org.gradle.sample.list.LinkedList;
 
 import com.google.gson.Gson;
+import org.apache.commons.lang3.StringUtils;
 
 import static org.gradle.sample.utilities.StringUtils.join;
 import static org.gradle.sample.utilities.StringUtils.split;
@@ -19,5 +20,11 @@ public class Main {
         System.out.println("args[0]: " + args[0]);
         Message message = new Gson().fromJson(json == null ? "{}" : json, Message.class);
         System.out.println("deserialized Message: " + message);
+
+        printModuleDebug(StringUtils.class);
+    }
+
+    private static void printModuleDebug(Class<?> clazz) {
+        System.out.println(clazz.getModule().getName() + " - " + clazz.getModule().getDescriptor().version().get());
     }
 }

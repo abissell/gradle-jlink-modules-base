@@ -5,4 +5,5 @@ module org.gradle.sample.app {
     requires org.gradle.sample.utilities;
 
     requires com.google.gson;
+    requires org.apache.commons.lang3;
 }
