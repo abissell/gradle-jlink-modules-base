@@ -2,6 +2,12 @@ plugins {
     java
 }
 
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(24)
+    }
+}
+
 version = "1.0.2"
 group = "org.gradle.sample"
 
