@@ -1,7 +1,7 @@
 plugins {
     id("myproject.java-conventions")
     application
-    id("org.beryx.jlink") version "3.1.3"
+    id("org.beryx.jlink") version "3.2.1"
     id("org.gradlex.extra-java-module-info")
 }
 
