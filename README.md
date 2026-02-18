@@ -15,6 +15,7 @@ Following is the README from the source Gradle multi-modules project used to boo
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+```
 :samples-dir: /home/tcagent1/agent/work/2822076975d89a59/promote-projects/gradle/build/git-checkout/platforms/documentation/docs/build/working/samples/install/java-modules-multi-project
 :gradle-version: 8.12
 
@@ -60,3 +61,4 @@ This is shown in link:sample_java_modules_multi_project_with_integration_tests.h
 For more information, see link:{userManualPath}/java_library_plugin.html#sec:java_library_modular[Java Module support in the Java Library Plugin],
 link:{userManualPath}/application_plugin.html#sec:application_modular[Java Module support in the Application Plugin] and
 link:{userManualPath}/java_testing.html#sec:java_testing_modular[testing Java Modules].
+```
