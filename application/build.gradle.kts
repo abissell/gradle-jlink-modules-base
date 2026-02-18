@@ -9,7 +9,7 @@ extraJavaModuleInfo {
     // This does not have to be a complete description (e.g. here 'org.apache.commons.collections' does not export anything here).
     // It only needs to be good enough to work in the context of this application we are building.
     automaticModule("commons-logging-1.2.jar", "org.apache.commons.logging")
-    module("commons-cli-1.4.jar", "org.apache.commons.cli", "3.2.2") {
+    module("commons-cli-1.5.0.jar", "org.apache.commons.cli", "1.5.0") {
         exports("org.apache.commons.cli")
     }
     module("commons-collections-3.2.2.jar", "org.apache.commons.collections", "3.2.2")
@@ -24,9 +24,9 @@ extraJavaModuleInfo {
 
 dependencies {
     implementation(project(":utilities"))
-    implementation("com.google.code.gson:gson:2.11.0")      // real module
-    implementation("org.apache.commons:commons-lang3:3.10") // automatic module
-    implementation("commons-cli:commons-cli:1.4")           // plain library
+    implementation("com.google.code.gson:gson:2.13.2")      // real module
+    implementation("org.apache.commons:commons-lang3:3.20.0") // automatic module
+    implementation("commons-cli:commons-cli:1.5.0")           // plain library
     implementation("commons-beanutils:commons-beanutils:1.9.4") // plain library (also brings in other libraries transitively)
 }
 
