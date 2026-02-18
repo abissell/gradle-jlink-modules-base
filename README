@@ -1,3 +1,20 @@
+# gradle-jlink-modules-base
+
+I wanted a simple example project with all of the following:
+* JPMS based
+* Multiple modules within the project, with dependencies between them
+* External library dependencies which may or may not be annotated with `module-info.java`
+* Builds the whole application into an optimized and well-encapsulated executable using `jlink`
+
+I was able to pull all this together using the [badass-jlink](https://badass-jlink-plugin.beryx.org/releases/latest/) and [extra-java-module-info](https://github.com/gradlex-org/extra-java-module-info) plugins.
+
+So that the repo can serve as a demonstration, the commit history shows the process for adding each type of dependency (including transitive deps) as a series of individual steps.
+The current version of the repo is known to build successfully with Gradle 9.3.1 and Java 25. The jlink-built executable can be tested using the `test_main.sh` script.
+
+Following is the README from the source Gradle multi-modules project used to bootstrap this repo:
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 :samples-dir: /home/tcagent1/agent/work/2822076975d89a59/promote-projects/gradle/build/git-checkout/platforms/documentation/docs/build/working/samples/install/java-modules-multi-project
 :gradle-version: 8.12
 
