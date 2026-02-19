@@ -1,5 +1,7 @@
 package org.gradle.sample.app;
 
+import java.lang.management.ManagementFactory;
+
 import org.gradle.sample.list.LinkedList;
 
 import com.google.gson.Gson;
@@ -38,6 +40,7 @@ public class Main {
 
         if (cmd.hasOption("debug")) {
             printModuleDebug(StringUtils.class);
+            System.out.println("Runtime JVM arguments: " + ManagementFactory.getRuntimeMXBean().getInputArguments());
         }
     }
 
