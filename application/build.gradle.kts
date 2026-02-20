@@ -6,6 +6,11 @@ plugins {
 }
 
 extraJavaModuleInfo {
+    module("chronicle-core-2026.3.jar", "chronicle.core")
+    module("posix-2026.2.jar", "net.openhft.posix")
+    module("jnr-a64asm-1.0.0.jar", "jnr.a64asm")
+    module("jnr-x86asm-1.0.2.jar", "jnr.x86asm")
+
     // This does not have to be a complete description (e.g. here 'org.apache.commons.collections' does not export anything here).
     // It only needs to be good enough to work in the context of this application we are building.
     automaticModule("commons-logging-1.2.jar", "org.apache.commons.logging")
@@ -24,6 +29,7 @@ extraJavaModuleInfo {
 
 dependencies {
     implementation(project(":utilities"))
+    implementation("com.abissell.java-util:java-util:0.8.0") // a modularized library
     implementation("com.google.code.gson:gson:2.13.2")      // real module
     implementation("org.apache.commons:commons-lang3:3.20.0") // automatic module
     implementation("commons-cli:commons-cli:1.5.0")           // plain library
@@ -42,3 +48,4 @@ jlink {
         name = "main"
     }
 }
+

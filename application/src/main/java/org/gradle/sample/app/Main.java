@@ -2,6 +2,7 @@ package org.gradle.sample.app;
 
 import java.lang.management.ManagementFactory;
 
+import com.abissell.javautil.math.DoubleRounder;
 import org.gradle.sample.list.LinkedList;
 
 import com.google.gson.Gson;
@@ -38,8 +39,15 @@ public class Main {
         System.out.println("Original: " + copy.toString());
         System.out.println("Copy:     " + copy.toString());
 
+        double numberToRound = 1234.56789d;
+        System.out.println("Number to round: " + numberToRound);
+        System.out.println("Rounded down to 2 places: " + DoubleRounder.roundDn(numberToRound, 2));
+        System.out.println("Rounded up to 2 places: " + DoubleRounder.roundUp(numberToRound, 2));
+        System.out.println("Rounded to 0 places: " + DoubleRounder.round(numberToRound, 0));
+
         if (cmd.hasOption("debug")) {
             printModuleDebug(StringUtils.class);
+            printModuleDebug(DoubleRounder.class);
             System.out.println("Runtime JVM arguments: " + ManagementFactory.getRuntimeMXBean().getInputArguments());
         }
     }

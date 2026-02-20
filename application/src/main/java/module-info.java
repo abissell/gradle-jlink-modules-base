@@ -6,6 +6,7 @@ module org.gradle.sample.app {
 
     requires org.gradle.sample.utilities;
 
+    requires com.abissell.javautil;
     requires com.google.gson;
     requires org.apache.commons.lang3;
     requires org.apache.commons.cli;
