@@ -46,9 +46,9 @@ public class Main {
         System.out.println("Rounded to 0 places: " + DoubleRounder.round(numberToRound, 0));
 
         if (cmd.hasOption("debug")) {
+            System.out.println("Runtime JVM arguments: " + ManagementFactory.getRuntimeMXBean().getInputArguments());
             printModuleDebug(StringUtils.class);
             printModuleDebug(DoubleRounder.class);
-            System.out.println("Runtime JVM arguments: " + ManagementFactory.getRuntimeMXBean().getInputArguments());
         }
     }
 

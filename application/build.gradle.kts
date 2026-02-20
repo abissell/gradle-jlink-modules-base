@@ -5,11 +5,20 @@ plugins {
     id("org.gradlex.extra-java-module-info")
 }
 
+dependencies {
+    implementation(project(":utilities"))
+    implementation("com.abissell:javautil:0.12.0") // a modularized library
+    implementation("com.google.code.gson:gson:2.13.2")      // real module
+    implementation("org.apache.commons:commons-lang3:3.20.0") // automatic module
+    implementation("commons-cli:commons-cli:1.5.0")           // plain library
+    implementation("commons-beanutils:commons-beanutils:1.9.4") // plain library (also brings in other libraries transitively)
+}
+
 extraJavaModuleInfo {
-    module("chronicle-core-2026.3.jar", "chronicle.core")
-    module("posix-2026.2.jar", "net.openhft.posix")
-    module("jnr-a64asm-1.0.0.jar", "jnr.a64asm")
-    module("jnr-x86asm-1.0.2.jar", "jnr.x86asm")
+    module("chronicle-core-2026.3.jar", "chronicle.core") // javautil dep
+    module("posix-2026.2.jar", "net.openhft.posix") // javautil dep
+    module("jnr-a64asm-1.0.0.jar", "jnr.a64asm") // javautil dep
+    module("jnr-x86asm-1.0.2.jar", "jnr.x86asm") // javautil dep
 
     // This does not have to be a complete description (e.g. here 'org.apache.commons.collections' does not export anything here).
     // It only needs to be good enough to work in the context of this application we are building.
@@ -25,15 +34,6 @@ extraJavaModuleInfo {
         requires("java.sql")
         requires("java.desktop")
     }
-}
-
-dependencies {
-    implementation(project(":utilities"))
-    implementation("com.abissell.java-util:java-util:0.8.0") // a modularized library
-    implementation("com.google.code.gson:gson:2.13.2")      // real module
-    implementation("org.apache.commons:commons-lang3:3.20.0") // automatic module
-    implementation("commons-cli:commons-cli:1.5.0")           // plain library
-    implementation("commons-beanutils:commons-beanutils:1.9.4") // plain library (also brings in other libraries transitively)
 }
 
 application {
