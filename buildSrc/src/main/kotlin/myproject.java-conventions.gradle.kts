@@ -19,7 +19,9 @@ tasks.test {
     useJUnitPlatform()
 }
 
+val catalog = extensions.getByType<VersionCatalogsExtension>().named("libs")
+
 dependencies {
-    testImplementation("org.junit.jupiter:junit-jupiter:6.0.3")
-    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+    testImplementation(catalog.findLibrary("org-junit-jupiter-junit-jupiter").get())
+    testRuntimeOnly(catalog.findLibrary("org-junit-platform-junit-platform-launcher").get())
 }

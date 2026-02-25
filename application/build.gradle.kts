@@ -7,11 +7,11 @@ plugins {
 
 dependencies {
     implementation(project(":utilities"))
-    implementation("com.abissell:javautil:0.12.0") // a modularized library
-    implementation("com.google.code.gson:gson:2.13.2")      // real module
-    implementation("org.apache.commons:commons-lang3:3.20.0") // automatic module
-    implementation("commons-cli:commons-cli:1.5.0")           // plain library
-    implementation("commons-beanutils:commons-beanutils:1.9.4") // plain library (also brings in other libraries transitively)
+    implementation(libs.com.abissell.javautil) // a modularized library
+    implementation(libs.com.google.code.gson.gson)      // real module
+    implementation(libs.org.apache.commons.commons.lang3) // automatic module
+    implementation(libs.commons.cli.commons.cli)           // plain library
+    implementation(libs.commons.beanutils.commons.beanutils) // plain library (also brings in other libraries transitively)
 }
 
 extraJavaModuleInfo {
